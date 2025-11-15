@@ -1,5 +1,4 @@
 import React, { useState, useCallback } from 'react';
-// FIX: Added Transition type import from framer-motion to resolve typing error for pageTransition.
 import { AnimatePresence, motion, Transition } from 'framer-motion';
 import type { Page, AvatarConfig } from './types';
 import LoginPage from './pages/LoginPage';
@@ -16,7 +15,6 @@ const pageVariants = {
   out: { opacity: 0, x: -300 },
 };
 
-// FIX: Explicitly typed pageTransition with the Transition type from framer-motion.
 const pageTransition: Transition = {
   type: 'tween',
   ease: 'anticipate',
@@ -29,7 +27,6 @@ export default function App() {
   const [avatarConfig, setAvatarConfig] = useState<AvatarConfig | null>(null);
 
   const handleLogin = useCallback(() => {
-    // Timeout removed, LoginPage now controls the flow.
     setPage('avatarCustomization');
   }, []);
 
